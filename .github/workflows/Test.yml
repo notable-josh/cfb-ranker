@@ -34,7 +34,7 @@ jobs:
       - name: Enforce type hinting
         run: poetry run mypy --ignore-missing-imports --strict $(git ls-files './cfb_ranker/*.py')
       - name: Test with pytest
-        run: poetry run pytest --cov=cfb_ranker --cov-report=xml --cov-fail-under=95
+        run: poetry run pytest --cov=cfb_ranker --cov-report=xml
       - name: Upload log artifacts
         uses: actions/upload-artifact@v3
         with:
