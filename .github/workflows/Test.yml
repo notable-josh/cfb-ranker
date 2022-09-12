@@ -32,7 +32,7 @@ jobs:
       - name: Enforce code style
         run: poetry run pylint $(git ls-files './cfb_ranker/*.py')
       - name: Enforce type hinting
-        run: poetry run mypy --strict $(git ls-files './cfb_ranker/*.py')
+        run: poetry run mypy --ignore-missing-imports --strict $(git ls-files './cfb_ranker/*.py')
       - name: Test with pytest
         run: poetry run pytest --cov=cfb_ranker --cov-report=xml --cov-fail-under=95
       - name: Upload log artifacts
